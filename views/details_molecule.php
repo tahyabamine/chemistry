@@ -9,10 +9,13 @@
     <dt>La formule chimique du molecule</dt>
     <dd><?= chemichalFormula($molecule->formule) ?></dd>
 
-    <dt>Elle est composee de</dt>
+    <dt>La masse moleculaire = </dt>
+    <dd><?= $molecule_masse->masse_moleculaire ?> g/mol</dd>
+
+    <dt>Elle est composée de:</dt>
 
     <?php foreach ($atomes as $atome) : ?>
-    <dd> <?= $atome->qtte_atome ?> atomes de l'<?= $atome->atome_nom ?> et </dd>
+    <dd> - <?= $atome->qtte_atome ?> atomes de le (l') <?= $atome->atome_nom ?> </dd>
     <?php endforeach; ?>
 </dl>
 

@@ -11,7 +11,7 @@
             <h4 class="card-title"><?= chemichalFormula($molecule->formule) ?></h4>
             <p class="card-text">
                 <a class="btn btn-primary" href="<?= url('details') ?>&id=<?= $molecule->id ?>">Voir plus</a>
-                <a class="btn btn-primary" href="<?= url('masse') ?>&id=<?= $molecule->id ?>">Masse moleculaire</a>
+
                 <a class="btn btn-warning" href="<?= url('update') ?>&id=<?= $molecule->id ?>">Modifier</a>
                 <a class="btn btn-danger" onclick="return confirm('Êtes-vous sûr ?')"
                     href="<?= url('delete') ?>&id=<?= $molecule->id ?>">Supprimer</a>

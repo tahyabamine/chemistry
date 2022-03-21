@@ -35,9 +35,7 @@ try {
         case 'delete':
             MoleculeController::delete();
             break;
-        case 'masse':
-            MoleculeController::masse();
-            break;
+
         case 'connexion':
             AuthenController::connexion();
             break;

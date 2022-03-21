@@ -104,4 +104,14 @@ class MoleculeModel
         $stmt->bindParam(':id', $id);
         $stmt->execute();
     }
+    static public function DeleteAtomes($id)
+    {
+        $requete = 'DELETE FROM atome_molecule WHERE id_molecule = :id';
+
+        $bdd = seConnecter();
+
+        $stmt = $bdd->prepare($requete);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
 }

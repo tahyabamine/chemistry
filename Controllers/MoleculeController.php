@@ -12,18 +12,15 @@ class MoleculeController
         $molecules = MoleculeModel::retrieveALL();
         require_once view('liste_molecule');
     }
-    static public function masse()
-    {
-        if (empty($_GET['id'])) ErreurController::print404();
-        $molecule = MoleculeModel::calcul_masse($_GET['id']);
-        require_once view('masse_molecule');
-    }
+
     static function details()
     {
         if (empty($_GET['id'])) ErreurController::print404();
 
         $molecule = MoleculeModel::retriveOne($_GET['id']);
         $atomes = MoleculeModel::retriveALLatome($_GET['id']);
+        $molecule_masse = MoleculeModel::calcul_masse($_GET['id']);
+
 
         if (empty($molecule))  ErreurController::print404();
         if (empty($atomes))  ErreurController::print404();
@@ -87,7 +84,7 @@ class MoleculeController
     {
         if (empty($_GET['id'])) ErreurController::print404();
 
-
+        MoleculeModel::DeleteAtomes($_GET['id']);
         MoleculeModel::deleteMolecule($_GET['id']);
 
 
