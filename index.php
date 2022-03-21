@@ -5,6 +5,7 @@ spl_autoload_register('FQCNEtRequire');
 
 use Exception;
 use Controllers\HomeController;
+use Controllers\AuthenController;
 use Controllers\ErreurController;
 use Controllers\MoleculeController;
 
@@ -25,7 +26,24 @@ try {
         case 'details':
             MoleculeController::details();
             break;
-
+        case 'create':
+            MoleculeController::create();
+            break;
+        case 'update':
+            MoleculeController::update();
+            break;
+        case 'delete':
+            MoleculeController::delete();
+            break;
+        case 'masse':
+            MoleculeController::masse();
+            break;
+        case 'connexion':
+            AuthenController::connexion();
+            break;
+        case 'deconnexion':
+            AuthenController::deconnexion();
+            break;
         default:
             throw new Exception('', 404);
     }

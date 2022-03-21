@@ -5,13 +5,29 @@
 use PDO;
 use Config;
 
+function erreursFormulaire(array $errors)
+{
+    foreach ($errors as $error) { ?>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <?= $error ?>
+</div>
+<?php }
+}
+function validateformule($formule)
+{
+    $reg = '#[A-Z][a-z]?\d*|\((?:[^()]*(?:\(.*\))?[^()]*)+\)\d+#';
+    return  boolval(preg_match($reg, $formule));
+}
 
 function redirection($route)
 {
     header('Location: ' . url($route));
     die;
 }
-function cemichalFormula($molecule)
+function chemichalFormula($molecule)
 {
 
     return preg_replace('/(\d+)/', '<sub>$1</sub>', $molecule);

@@ -17,4 +17,11 @@
             <nav class="nav justify-content-center">
                 <a class="nav-link active" href="<?= url('home') ?>">Accueil</a>
                 <a class="nav-link active" href="<?= url('liste') ?>">Liste de molecules</a>
+                <a class="nav-link active" href="<?= url('create') ?>">Ajouter une molecule</a>
+                <?php if (empty($_SESSION['pseudo'])) : ?>
+                <a class="nav-link active" href="<?= url('connexion') ?>">Connexion</a>
+
+                <?php else : ?>
+                <a class="nav-link active" href="<?= url('deconnexion') ?>">Deconnexion</a>
+                <?php endif; ?>
             </nav>

@@ -7,7 +7,7 @@
     <dd><?= $molecule->nom ?></dd>
 
     <dt>La formule chimique du molecule</dt>
-    <dd><?= cemichalFormula($molecule->formule) ?></dd>
+    <dd><?= chemichalFormula($molecule->formule) ?></dd>
 
     <dt>Elle est composee de</dt>
 
