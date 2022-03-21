@@ -15,7 +15,7 @@
     <dt>Elle est composée de:</dt>
 
     <?php foreach ($atomes as $atome) : ?>
-    <dd> - <?= $atome->qtte_atome ?> atomes de le (l') <?= $atome->atome_nom ?> </dd>
+    <dd> - <?= $atome->qtte_atome ?> atome(s) de (ou du) <?= $atome->atome_nom ?> </dd>
     <?php endforeach; ?>
 </dl>
 

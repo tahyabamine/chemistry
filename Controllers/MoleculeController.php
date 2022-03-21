@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Models\AtomeModel;
 use Models\MoleculeModel;
 
 class MoleculeController
@@ -18,7 +19,7 @@ class MoleculeController
         if (empty($_GET['id'])) ErreurController::print404();
 
         $molecule = MoleculeModel::retriveOne($_GET['id']);
-        $atomes = MoleculeModel::retriveALLatome($_GET['id']);
+        $atomes = AtomeModel::retriveALLatome($_GET['id']);
         $molecule_masse = MoleculeModel::calcul_masse($_GET['id']);
 
 
@@ -76,7 +77,7 @@ class MoleculeController
             }
         }
 
-        $atomes = MoleculeModel::retrieveALLAtomes();
+        $atomes = AtomeModel::retrieveALLAtomes();
 
         require_once view('update_molecule');
     }
@@ -84,7 +85,7 @@ class MoleculeController
     {
         if (empty($_GET['id'])) ErreurController::print404();
 
-        MoleculeModel::DeleteAtomes($_GET['id']);
+        AtomeModel::DeleteAtomes($_GET['id']);
         MoleculeModel::deleteMolecule($_GET['id']);
 
 
