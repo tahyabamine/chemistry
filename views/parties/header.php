@@ -18,6 +18,7 @@
                 <a class="nav-link active" href="<?= url('home') ?>">Accueil</a>
                 <a class="nav-link active" href="<?= url('liste') ?>">Liste de molecules</a>
                 <a class="nav-link active" href="<?= url('create') ?>">Ajouter une molecule</a>
+                <a class="nav-link active" href="<?= url('periodic') ?>">Periodic Table</a>
                 <?php if (empty($_SESSION['pseudo'])) : ?>
                 <a class="nav-link active" href="<?= url('connexion') ?>">Connexion</a>
 

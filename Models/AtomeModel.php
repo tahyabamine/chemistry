@@ -37,4 +37,14 @@ class AtomeModel
         $stmt->bindParam(':id', $id);
         $stmt->execute();
     }
+    static function periodicTable()
+    {
+        $bdd = seConnecter();
+        $requette = 'SELECT symbole, info_groupe, numero FROM `atome`  order by numero ';
+
+        $stmt = $bdd->prepare($requette);
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
 }

@@ -7,7 +7,7 @@
 
 
     <div class="form-group">
-        <label for="atome">Editeur</label>
+        <label for="atome">Atome</label>
         <select class="form-control" name="atome" id="atome">
             <?php foreach ($atomes as $atome) : ?>
             <option value="<?= $atome->id ?>"><?= $atome->nom ?></option>
@@ -16,10 +16,10 @@
     </div>
 
     <div class="form-group row">
-        <label for="quantite" class="col-sm-12 col-form-label">coefficient</label>
+        <label for="quantite" class="col-sm-12 col-form-label">Coefficient</label>
         <div class="col-sm-12">
             <input type="number" step="1" class="form-control" name="quantite" id="quantite"
-                placeholder="La formule chimique de la molecule" required>
+                placeholder="Le coefficient" required>
         </div>
     </div>
 

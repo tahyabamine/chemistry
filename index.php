@@ -42,6 +42,9 @@ try {
         case 'deconnexion':
             AuthenController::deconnexion();
             break;
+        case 'periodic':
+            MoleculeController::periodicTable();
+            break;
         default:
             throw new Exception('', 404);
     }

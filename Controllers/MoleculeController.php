@@ -91,4 +91,10 @@ class MoleculeController
 
         redirection('liste');
     }
+    static public function periodicTable()
+    {
+        $atomes = AtomeModel::periodicTable();
+
+        require_once view('periodic_table');
+    }
 }
